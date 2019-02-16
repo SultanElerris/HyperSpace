@@ -1,0 +1,667 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		81476A6DC986779FD9DF9626 /* Pods_HyperSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 608F46EDC5E1FD0D0DC4E359 /* Pods_HyperSpace.framework */; };
+		E437CF432218A241009A5299 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E437CF422218A241009A5299 /* AppDelegate.swift */; };
+		E437CF452218A241009A5299 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E437CF442218A241009A5299 /* ViewController.swift */; };
+		E437CF482218A241009A5299 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E437CF462218A241009A5299 /* Main.storyboard */; };
+		E437CF4A2218A242009A5299 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E437CF492218A242009A5299 /* Assets.xcassets */; };
+		E437CF4D2218A242009A5299 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E437CF4B2218A242009A5299 /* LaunchScreen.storyboard */; };
+		E437CF582218A242009A5299 /* HyperSpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E437CF572218A242009A5299 /* HyperSpaceTests.swift */; };
+		E437CF632218A242009A5299 /* HyperSpaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E437CF622218A242009A5299 /* HyperSpaceUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E437CF542218A242009A5299 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E437CF372218A241009A5299 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E437CF3E2218A241009A5299;
+			remoteInfo = HyperSpace;
+		};
+		E437CF5F2218A242009A5299 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E437CF372218A241009A5299 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E437CF3E2218A241009A5299;
+			remoteInfo = HyperSpace;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3D91D3E8D82B69153AA46C42 /* Pods-HyperSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperSpace.debug.xcconfig"; path = "Target Support Files/Pods-HyperSpace/Pods-HyperSpace.debug.xcconfig"; sourceTree = "<group>"; };
+		608F46EDC5E1FD0D0DC4E359 /* Pods_HyperSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyperSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7943264EBA21DFE9ECC00B11 /* Pods-HyperSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperSpace.release.xcconfig"; path = "Target Support Files/Pods-HyperSpace/Pods-HyperSpace.release.xcconfig"; sourceTree = "<group>"; };
+		E437CF3F2218A241009A5299 /* HyperSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E437CF422218A241009A5299 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E437CF442218A241009A5299 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E437CF472218A241009A5299 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E437CF492218A242009A5299 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E437CF4C2218A242009A5299 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E437CF4E2218A242009A5299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E437CF532218A242009A5299 /* HyperSpaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyperSpaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E437CF572218A242009A5299 /* HyperSpaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperSpaceTests.swift; sourceTree = "<group>"; };
+		E437CF592218A242009A5299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E437CF5E2218A242009A5299 /* HyperSpaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyperSpaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E437CF622218A242009A5299 /* HyperSpaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperSpaceUITests.swift; sourceTree = "<group>"; };
+		E437CF642218A242009A5299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E437CF3C2218A241009A5299 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81476A6DC986779FD9DF9626 /* Pods_HyperSpace.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E437CF502218A242009A5299 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E437CF5B2218A242009A5299 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		81B12C420E287027E62C5534 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3D91D3E8D82B69153AA46C42 /* Pods-HyperSpace.debug.xcconfig */,
+				7943264EBA21DFE9ECC00B11 /* Pods-HyperSpace.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		952F85AB339E1E345DE235C0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				608F46EDC5E1FD0D0DC4E359 /* Pods_HyperSpace.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E437CF362218A241009A5299 = {
+			isa = PBXGroup;
+			children = (
+				E437CF412218A241009A5299 /* HyperSpace */,
+				E437CF562218A242009A5299 /* HyperSpaceTests */,
+				E437CF612218A242009A5299 /* HyperSpaceUITests */,
+				E437CF402218A241009A5299 /* Products */,
+				81B12C420E287027E62C5534 /* Pods */,
+				952F85AB339E1E345DE235C0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E437CF402218A241009A5299 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E437CF3F2218A241009A5299 /* HyperSpace.app */,
+				E437CF532218A242009A5299 /* HyperSpaceTests.xctest */,
+				E437CF5E2218A242009A5299 /* HyperSpaceUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E437CF412218A241009A5299 /* HyperSpace */ = {
+			isa = PBXGroup;
+			children = (
+				E437CF422218A241009A5299 /* AppDelegate.swift */,
+				E437CF442218A241009A5299 /* ViewController.swift */,
+				E437CF462218A241009A5299 /* Main.storyboard */,
+				E437CF492218A242009A5299 /* Assets.xcassets */,
+				E437CF4B2218A242009A5299 /* LaunchScreen.storyboard */,
+				E437CF4E2218A242009A5299 /* Info.plist */,
+			);
+			path = HyperSpace;
+			sourceTree = "<group>";
+		};
+		E437CF562218A242009A5299 /* HyperSpaceTests */ = {
+			isa = PBXGroup;
+			children = (
+				E437CF572218A242009A5299 /* HyperSpaceTests.swift */,
+				E437CF592218A242009A5299 /* Info.plist */,
+			);
+			path = HyperSpaceTests;
+			sourceTree = "<group>";
+		};
+		E437CF612218A242009A5299 /* HyperSpaceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E437CF622218A242009A5299 /* HyperSpaceUITests.swift */,
+				E437CF642218A242009A5299 /* Info.plist */,
+			);
+			path = HyperSpaceUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E437CF3E2218A241009A5299 /* HyperSpace */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E437CF672218A242009A5299 /* Build configuration list for PBXNativeTarget "HyperSpace" */;
+			buildPhases = (
+				AC04E7B190033796D05CA3FD /* [CP] Check Pods Manifest.lock */,
+				E437CF3B2218A241009A5299 /* Sources */,
+				E437CF3C2218A241009A5299 /* Frameworks */,
+				E437CF3D2218A241009A5299 /* Resources */,
+				AF83BE1FFCF3B042477DA418 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HyperSpace;
+			productName = HyperSpace;
+			productReference = E437CF3F2218A241009A5299 /* HyperSpace.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E437CF522218A242009A5299 /* HyperSpaceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E437CF6A2218A242009A5299 /* Build configuration list for PBXNativeTarget "HyperSpaceTests" */;
+			buildPhases = (
+				E437CF4F2218A242009A5299 /* Sources */,
+				E437CF502218A242009A5299 /* Frameworks */,
+				E437CF512218A242009A5299 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E437CF552218A242009A5299 /* PBXTargetDependency */,
+			);
+			name = HyperSpaceTests;
+			productName = HyperSpaceTests;
+			productReference = E437CF532218A242009A5299 /* HyperSpaceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E437CF5D2218A242009A5299 /* HyperSpaceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E437CF6D2218A242009A5299 /* Build configuration list for PBXNativeTarget "HyperSpaceUITests" */;
+			buildPhases = (
+				E437CF5A2218A242009A5299 /* Sources */,
+				E437CF5B2218A242009A5299 /* Frameworks */,
+				E437CF5C2218A242009A5299 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E437CF602218A242009A5299 /* PBXTargetDependency */,
+			);
+			name = HyperSpaceUITests;
+			productName = HyperSpaceUITests;
+			productReference = E437CF5E2218A242009A5299 /* HyperSpaceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E437CF372218A241009A5299 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Sultan Sultan";
+				TargetAttributes = {
+					E437CF3E2218A241009A5299 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					E437CF522218A242009A5299 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = E437CF3E2218A241009A5299;
+					};
+					E437CF5D2218A242009A5299 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = E437CF3E2218A241009A5299;
+					};
+				};
+			};
+			buildConfigurationList = E437CF3A2218A241009A5299 /* Build configuration list for PBXProject "HyperSpace" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E437CF362218A241009A5299;
+			productRefGroup = E437CF402218A241009A5299 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E437CF3E2218A241009A5299 /* HyperSpace */,
+				E437CF522218A242009A5299 /* HyperSpaceTests */,
+				E437CF5D2218A242009A5299 /* HyperSpaceUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E437CF3D2218A241009A5299 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E437CF4D2218A242009A5299 /* LaunchScreen.storyboard in Resources */,
+				E437CF4A2218A242009A5299 /* Assets.xcassets in Resources */,
+				E437CF482218A241009A5299 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E437CF512218A242009A5299 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E437CF5C2218A242009A5299 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AC04E7B190033796D05CA3FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HyperSpace-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF83BE1FFCF3B042477DA418 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HyperSpace/Pods-HyperSpace-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HyperSpace/Pods-HyperSpace-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E437CF3B2218A241009A5299 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E437CF452218A241009A5299 /* ViewController.swift in Sources */,
+				E437CF432218A241009A5299 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E437CF4F2218A242009A5299 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E437CF582218A242009A5299 /* HyperSpaceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E437CF5A2218A242009A5299 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E437CF632218A242009A5299 /* HyperSpaceUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E437CF552218A242009A5299 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E437CF3E2218A241009A5299 /* HyperSpace */;
+			targetProxy = E437CF542218A242009A5299 /* PBXContainerItemProxy */;
+		};
+		E437CF602218A242009A5299 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E437CF3E2218A241009A5299 /* HyperSpace */;
+			targetProxy = E437CF5F2218A242009A5299 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E437CF462218A241009A5299 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E437CF472218A241009A5299 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E437CF4B2218A242009A5299 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E437CF4C2218A242009A5299 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E437CF652218A242009A5299 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E437CF662218A242009A5299 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E437CF682218A242009A5299 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D91D3E8D82B69153AA46C42 /* Pods-HyperSpace.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T7AFS2ZVJA;
+				INFOPLIST_FILE = HyperSpace/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Oraculi.HyperSpace;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E437CF692218A242009A5299 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7943264EBA21DFE9ECC00B11 /* Pods-HyperSpace.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T7AFS2ZVJA;
+				INFOPLIST_FILE = HyperSpace/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Oraculi.HyperSpace;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E437CF6B2218A242009A5299 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T7AFS2ZVJA;
+				INFOPLIST_FILE = HyperSpaceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Oraculi.HyperSpaceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HyperSpace.app/HyperSpace";
+			};
+			name = Debug;
+		};
+		E437CF6C2218A242009A5299 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T7AFS2ZVJA;
+				INFOPLIST_FILE = HyperSpaceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Oraculi.HyperSpaceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HyperSpace.app/HyperSpace";
+			};
+			name = Release;
+		};
+		E437CF6E2218A242009A5299 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T7AFS2ZVJA;
+				INFOPLIST_FILE = HyperSpaceUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Oraculi.HyperSpaceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HyperSpace;
+			};
+			name = Debug;
+		};
+		E437CF6F2218A242009A5299 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T7AFS2ZVJA;
+				INFOPLIST_FILE = HyperSpaceUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Oraculi.HyperSpaceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HyperSpace;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E437CF3A2218A241009A5299 /* Build configuration list for PBXProject "HyperSpace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E437CF652218A242009A5299 /* Debug */,
+				E437CF662218A242009A5299 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E437CF672218A242009A5299 /* Build configuration list for PBXNativeTarget "HyperSpace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E437CF682218A242009A5299 /* Debug */,
+				E437CF692218A242009A5299 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E437CF6A2218A242009A5299 /* Build configuration list for PBXNativeTarget "HyperSpaceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E437CF6B2218A242009A5299 /* Debug */,
+				E437CF6C2218A242009A5299 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E437CF6D2218A242009A5299 /* Build configuration list for PBXNativeTarget "HyperSpaceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E437CF6E2218A242009A5299 /* Debug */,
+				E437CF6F2218A242009A5299 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E437CF372218A241009A5299 /* Project object */;
+}
