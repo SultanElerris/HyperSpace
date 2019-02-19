@@ -15,6 +15,7 @@
 		E437CF4D2218A242009A5299 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E437CF4B2218A242009A5299 /* LaunchScreen.storyboard */; };
 		E437CF582218A242009A5299 /* HyperSpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E437CF572218A242009A5299 /* HyperSpaceTests.swift */; };
 		E437CF632218A242009A5299 /* HyperSpaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E437CF622218A242009A5299 /* HyperSpaceUITests.swift */; };
+		E437CF74221B92B2009A5299 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E437CF73221B92B2009A5299 /* NetworkingManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		E437CF5E2218A242009A5299 /* HyperSpaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyperSpaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E437CF622218A242009A5299 /* HyperSpaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperSpaceUITests.swift; sourceTree = "<group>"; };
 		E437CF642218A242009A5299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E437CF73221B92B2009A5299 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +87,6 @@
 				3D91D3E8D82B69153AA46C42 /* Pods-HyperSpace.debug.xcconfig */,
 				7943264EBA21DFE9ECC00B11 /* Pods-HyperSpace.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -122,6 +123,7 @@
 		E437CF412218A241009A5299 /* HyperSpace */ = {
 			isa = PBXGroup;
 			children = (
+				E437CF72221B9291009A5299 /* Networking */,
 				E437CF422218A241009A5299 /* AppDelegate.swift */,
 				E437CF442218A241009A5299 /* ViewController.swift */,
 				E437CF462218A241009A5299 /* Main.storyboard */,
@@ -148,6 +150,22 @@
 				E437CF642218A242009A5299 /* Info.plist */,
 			);
 			path = HyperSpaceUITests;
+			sourceTree = "<group>";
+		};
+		E437CF72221B9291009A5299 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E437CF75221BA4FE009A5299 /* Models */,
+				E437CF73221B92B2009A5299 /* NetworkingManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E437CF75221BA4FE009A5299 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E437CF74221B92B2009A5299 /* NetworkingManager.swift in Sources */,
 				E437CF452218A241009A5299 /* ViewController.swift in Sources */,
 				E437CF432218A241009A5299 /* AppDelegate.swift in Sources */,
 			);
