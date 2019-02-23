@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		81476A6DC986779FD9DF9626 /* Pods_HyperSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 608F46EDC5E1FD0D0DC4E359 /* Pods_HyperSpace.framework */; };
 		E437CF432218A241009A5299 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E437CF422218A241009A5299 /* AppDelegate.swift */; };
-		E437CF452218A241009A5299 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E437CF442218A241009A5299 /* ViewController.swift */; };
-		E437CF482218A241009A5299 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E437CF462218A241009A5299 /* Main.storyboard */; };
 		E437CF4A2218A242009A5299 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E437CF492218A242009A5299 /* Assets.xcassets */; };
 		E437CF4D2218A242009A5299 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E437CF4B2218A242009A5299 /* LaunchScreen.storyboard */; };
 		E437CF582218A242009A5299 /* HyperSpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E437CF572218A242009A5299 /* HyperSpaceTests.swift */; };
 		E437CF632218A242009A5299 /* HyperSpaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E437CF622218A242009A5299 /* HyperSpaceUITests.swift */; };
 		E437CF74221B92B2009A5299 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E437CF73221B92B2009A5299 /* NetworkingManager.swift */; };
+		E4EFBD932220E18F00EE324E /* HomeViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EFBD922220E18F00EE324E /* HomeViewManager.swift */; };
+		E4EFBD952220E1BB00EE324E /* HomeViewCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EFBD942220E1BB00EE324E /* HomeViewCollectionViewController.swift */; };
+		E4EFBD972220E1F500EE324E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4EFBD962220E1F500EE324E /* Home.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +42,6 @@
 		7943264EBA21DFE9ECC00B11 /* Pods-HyperSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperSpace.release.xcconfig"; path = "Target Support Files/Pods-HyperSpace/Pods-HyperSpace.release.xcconfig"; sourceTree = "<group>"; };
 		E437CF3F2218A241009A5299 /* HyperSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E437CF422218A241009A5299 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E437CF442218A241009A5299 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E437CF472218A241009A5299 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E437CF492218A242009A5299 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E437CF4C2218A242009A5299 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E437CF4E2218A242009A5299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +52,9 @@
 		E437CF622218A242009A5299 /* HyperSpaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperSpaceUITests.swift; sourceTree = "<group>"; };
 		E437CF642218A242009A5299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E437CF73221B92B2009A5299 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		E4EFBD922220E18F00EE324E /* HomeViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewManager.swift; sourceTree = "<group>"; };
+		E4EFBD942220E1BB00EE324E /* HomeViewCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCollectionViewController.swift; sourceTree = "<group>"; };
+		E4EFBD962220E1F500EE324E /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				E437CF412218A241009A5299 /* HyperSpace */,
+				E437CF4E2218A242009A5299 /* Info.plist */,
 				E437CF562218A242009A5299 /* HyperSpaceTests */,
 				E437CF612218A242009A5299 /* HyperSpaceUITests */,
 				E437CF402218A241009A5299 /* Products */,
@@ -123,13 +126,9 @@
 		E437CF412218A241009A5299 /* HyperSpace */ = {
 			isa = PBXGroup;
 			children = (
+				E4EFBD912220E14500EE324E /* Home */,
 				E437CF72221B9291009A5299 /* Networking */,
-				E437CF422218A241009A5299 /* AppDelegate.swift */,
-				E437CF442218A241009A5299 /* ViewController.swift */,
-				E437CF462218A241009A5299 /* Main.storyboard */,
-				E437CF492218A242009A5299 /* Assets.xcassets */,
-				E437CF4B2218A242009A5299 /* LaunchScreen.storyboard */,
-				E437CF4E2218A242009A5299 /* Info.plist */,
+				E4EFBD982220E2D500EE324E /* Others */,
 			);
 			path = HyperSpace;
 			sourceTree = "<group>";
@@ -166,6 +165,26 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E4EFBD912220E14500EE324E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E4EFBD922220E18F00EE324E /* HomeViewManager.swift */,
+				E4EFBD942220E1BB00EE324E /* HomeViewCollectionViewController.swift */,
+				E4EFBD962220E1F500EE324E /* Home.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E4EFBD982220E2D500EE324E /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				E437CF422218A241009A5299 /* AppDelegate.swift */,
+				E437CF492218A242009A5299 /* Assets.xcassets */,
+				E437CF4B2218A242009A5299 /* LaunchScreen.storyboard */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,7 +295,7 @@
 			files = (
 				E437CF4D2218A242009A5299 /* LaunchScreen.storyboard in Resources */,
 				E437CF4A2218A242009A5299 /* Assets.xcassets in Resources */,
-				E437CF482218A241009A5299 /* Main.storyboard in Resources */,
+				E4EFBD972220E1F500EE324E /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,9 +367,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4EFBD952220E1BB00EE324E /* HomeViewCollectionViewController.swift in Sources */,
 				E437CF74221B92B2009A5299 /* NetworkingManager.swift in Sources */,
-				E437CF452218A241009A5299 /* ViewController.swift in Sources */,
 				E437CF432218A241009A5299 /* AppDelegate.swift in Sources */,
+				E4EFBD932220E18F00EE324E /* HomeViewManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,14 +406,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E437CF462218A241009A5299 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E437CF472218A241009A5299 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E437CF4B2218A242009A5299 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -536,7 +548,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Oraculi.HyperSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -555,7 +567,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Oraculi.HyperSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
