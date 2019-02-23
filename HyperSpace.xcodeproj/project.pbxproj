@@ -17,6 +17,7 @@
 		E4EFBD932220E18F00EE324E /* HomeViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EFBD922220E18F00EE324E /* HomeViewManager.swift */; };
 		E4EFBD952220E1BB00EE324E /* HomeViewCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EFBD942220E1BB00EE324E /* HomeViewCollectionViewController.swift */; };
 		E4EFBD972220E1F500EE324E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4EFBD962220E1F500EE324E /* Home.storyboard */; };
+		E4EFBD9A2220E86900EE324E /* Launches.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EFBD992220E86900EE324E /* Launches.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		E4EFBD922220E18F00EE324E /* HomeViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewManager.swift; sourceTree = "<group>"; };
 		E4EFBD942220E1BB00EE324E /* HomeViewCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCollectionViewController.swift; sourceTree = "<group>"; };
 		E4EFBD962220E1F500EE324E /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		E4EFBD992220E86900EE324E /* Launches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launches.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 		E437CF75221BA4FE009A5299 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E4EFBD992220E86900EE324E /* Launches.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 			files = (
 				E4EFBD952220E1BB00EE324E /* HomeViewCollectionViewController.swift in Sources */,
 				E437CF74221B92B2009A5299 /* NetworkingManager.swift in Sources */,
+				E4EFBD9A2220E86900EE324E /* Launches.swift in Sources */,
 				E437CF432218A241009A5299 /* AppDelegate.swift in Sources */,
 				E4EFBD932220E18F00EE324E /* HomeViewManager.swift in Sources */,
 			);
