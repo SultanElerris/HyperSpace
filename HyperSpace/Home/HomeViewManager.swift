@@ -10,13 +10,12 @@ import Foundation
 
 
 protocol HomeViewManagerDelegate {
-    func didRecieveDate(launches :[Launch])
+    func didRecieveDate(launches :[[Launch]])
 }
 
 class HomeViewManager {
     
       let networkManager = NetworkManager.sharedInstance
-    let delegate: HomeViewManagerDelegate
     
     
     init() {
@@ -25,11 +24,18 @@ class HomeViewManager {
     
     
     func fetchAllLaunches()  {
+        
         networkManager.fetchDataFrom(url: launchesBaseURL, cache: true, completion: { (launches) in
+        
+        guard  let jsonData = try? JSONSerialization.data(withJSONObject:launches) else {
+            return
+        }
             
+        do {
+            let jsonDecoder = JSONDecoder()
+            let mylunch = try jsonDecoder.decode(Launch.self, from: jsonData)
             
-           self.delegate.didRecieveDate(launches: <#T##[Launch]#>)
-            
+        } catch { /* Report the error */ print(error) }
         })
     }
     

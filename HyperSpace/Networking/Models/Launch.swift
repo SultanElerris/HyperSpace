@@ -9,6 +9,9 @@
 import Foundation
 
 
-struct Launch: Codable{
+struct Launch: Decodable {
+    let details: String
+    let flight_number: Int
+    let launch_date_local: String
     
 }

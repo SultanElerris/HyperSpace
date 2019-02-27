@@ -12,10 +12,12 @@ private let reuseIdentifier = "Cell"
 
 class HomeViewCollectionViewController: UICollectionViewController {
     
-    var launches: [Launch]
+    var launches: [[Launch]] = []
+    let viewManager = HomeViewManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewManager.fetchAllLaunches()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -60,8 +62,8 @@ class HomeViewCollectionViewController: UICollectionViewController {
 }
 
 extension HomeViewCollectionViewController: HomeViewManagerDelegate {
-    func didRecieveDate(with launches: [Launch]) {
-        self.launches = launches
+    func didRecieveDate(launches: [[Launch]]) {
+     //   self.launches = [[launches]]
         self.collectionView.reloadData()
     }
     
