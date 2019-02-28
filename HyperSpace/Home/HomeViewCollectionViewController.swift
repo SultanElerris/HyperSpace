@@ -10,14 +10,27 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
+protocol HomeViewManagerDelegate: class {
+    func didRecieveDate(launches :[Launch])
+}
+
+
 class HomeViewCollectionViewController: UICollectionViewController {
     
-    var launches: [[Launch]] = []
+    var launches: [Launch] = [] {
+        didSet {
+             self.collectionView.reloadData()
+        }
+    }
+    
     let viewManager = HomeViewManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewManager.delegate = self
         viewManager.fetchAllLaunches()
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -27,7 +40,15 @@ class HomeViewCollectionViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
     }
-
+    
+    init() {
+        super.init(collectionViewLayout: UICollectionViewFlowLayout())
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -42,29 +63,28 @@ class HomeViewCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return self.launches.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
         // Configure the cell
-    
+        cell.backgroundColor = .blue
         return cell
     }
 
 }
 
 extension HomeViewCollectionViewController: HomeViewManagerDelegate {
-    func didRecieveDate(launches: [[Launch]]) {
-     //   self.launches = [[launches]]
-        self.collectionView.reloadData()
+    func didRecieveDate(launches: [Launch]) {
+        self.launches = launches
     }
     
     

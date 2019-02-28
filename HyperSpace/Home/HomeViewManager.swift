@@ -8,38 +8,28 @@
 
 import Foundation
 
-
-protocol HomeViewManagerDelegate {
-    func didRecieveDate(launches :[[Launch]])
-}
-
 class HomeViewManager {
     
-      let networkManager = NetworkManager.sharedInstance
-    
-    
-    init() {
-        
-    }
+    let networkManager = NetworkManager.sharedInstance
+    weak var delegate: HomeViewManagerDelegate?
     
     
     func fetchAllLaunches()  {
         
-        networkManager.fetchDataFrom(url: launchesBaseURL, cache: true, completion: { (launches) in
+        networkManager.fetchDataFrom(url: launchesBaseURL, cache: true, completion: { (response) in
         
-        guard  let jsonData = try? JSONSerialization.data(withJSONObject:launches) else {
+        guard  let jsonData = try? JSONSerialization.data(withJSONObject:response) else {
             return
         }
             
         do {
             let jsonDecoder = JSONDecoder()
-            let mylunch = try jsonDecoder.decode(Launch.self, from: jsonData)
-            
+            let lunches = try jsonDecoder.decode([Launch].self, from: jsonData)
+
+            self.delegate?.didRecieveDate(launches: lunches)
         } catch { /* Report the error */ print(error) }
         })
     }
-    
-    
     
     
 }

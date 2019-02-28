@@ -24,7 +24,7 @@ class BaseTabBarController: UITabBarController {
         
         // Array of view Controllers the tab bar will show ...
         viewControllers = [
-            createNavController(viewController: HomeViewCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout()), title: TabBarTitle.lunches.rawValue, imageNamge: "")
+            createNavController(viewController: HomeViewCollectionViewController(), title: TabBarTitle.lunches.rawValue, imageNamge: "")
         ]
     }
     
