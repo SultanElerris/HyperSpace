@@ -25,7 +25,7 @@ class HomeViewManager {
             let lunches = try jsonDecoder.decode([Launch].self, from: jsonData)
 
             self.delegate?.didRecieveDate(launches: lunches)
-        } catch { /* Report the error */ print(error) }
+        } catch { /* Report the decoding error */ print("can't decode lunches json data",error) }
         })
     }
     
