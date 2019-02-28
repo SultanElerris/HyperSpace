@@ -17,10 +17,8 @@ class HomeViewManager {
     func fetchAllLaunches()  {
         
         networkManager.fetchDataFrom(url: launchesBaseURL, cache: true, completion: { (response) in
-        
-        guard  let jsonData = try? JSONSerialization.data(withJSONObject:response) else {
-            return
-        }
+        // Serialize our response to a json format so we can decode it later
+        guard  let jsonData = try? JSONSerialization.data(withJSONObject:response) else { return}
             
         do {
             let jsonDecoder = JSONDecoder()
