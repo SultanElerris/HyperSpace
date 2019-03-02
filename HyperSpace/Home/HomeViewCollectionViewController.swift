@@ -77,6 +77,7 @@ class HomeViewCollectionViewController: UICollectionViewController {
     
         // Configure the cell
         cell.backgroundColor = .blue
+        print(self.launches[indexPath.row].missionName)
         return cell
     }
 

@@ -8,87 +8,314 @@
 
 import Foundation
 
-
-struct Launch: Decodable {
-    let flight_number: Int
-    let launch_date_local: String
+struct Launch: Codable {
+    let flightNumber: Int
+    let missionName: String
+    let missionID: [String]
+    let upcoming: Bool
+    let launchYear: String
+    let launchDateUnix: Int
+    let launchDateUTC: String
+    let launchDateLocal: String
+    let isTentative: Bool
+    let tentativeMaxPrecision: TentativeMaxPrecision
+    let tbd: Bool
+    let launchWindow: Int?
+    let rocket: Rocket
+    let ships: [String]
+    let telemetry: Telemetry
+    let launchSite: LaunchSite
+    let launchSuccess: Bool?
+    let launchFailureDetails: LaunchFailureDetails?
+    let links: Links
+    let details, staticFireDateUTC: String?
+    let staticFireDateUnix: Int?
+    let timeline: [String: Int]?
     
+    enum CodingKeys: String, CodingKey {
+        case flightNumber = "flight_number"
+        case missionName = "mission_name"
+        case missionID = "mission_id"
+        case upcoming
+        case launchYear = "launch_year"
+        case launchDateUnix = "launch_date_unix"
+        case launchDateUTC = "launch_date_utc"
+        case launchDateLocal = "launch_date_local"
+        case isTentative = "is_tentative"
+        case tentativeMaxPrecision = "tentative_max_precision"
+        case tbd
+        case launchWindow = "launch_window"
+        case rocket, ships, telemetry
+        case launchSite = "launch_site"
+        case launchSuccess = "launch_success"
+        case launchFailureDetails = "launch_failure_details"
+        case links, details
+        case staticFireDateUTC = "static_fire_date_utc"
+        case staticFireDateUnix = "static_fire_date_unix"
+        case timeline
+    }
 }
 
+struct LaunchFailureDetails: Codable {
+    let time: Int
+    let altitude: Int?
+    let reason: String
+}
 
-//{
-//    "flight_number": 1,
-//    "mission_name": "FalconSat",
-//    "mission_id": [],
-//    "upcoming": false,
-//    "launch_year": "2006",
-//    "launch_date_unix": 1143239400,
-//    "launch_date_utc": "2006-03-24T22:30:00.000Z",
-//    "launch_date_local": "2006-03-25T10:30:00+12:00",
-//    "is_tentative": false,
-//    "tentative_max_precision": "hour",
-//    "tbd": false,
-//    "launch_window": 0,
-//    "rocket": {
-//        "rocket_id": "falcon1",
-//        "rocket_name": "Falcon 1",
-//        "rocket_type": "Merlin A",
-//        "first_stage": {
-//            "cores": [
-//            {
-//            "core_serial": "Merlin1A",
-//            "flight": 1,
-//            "block": null,
-//            "gridfins": false,
-//            "legs": false,
-//            "reused": false,
-//            "land_success": null,
-//            "landing_intent": false,
-//            "landing_type": null,
-//            "landing_vehicle": null
-//            }
-//            ]
-//        },
-//        "second_stage": {
-//            "block": 1,
-//            "payloads": [
-//            {
-//            "payload_id": "FalconSAT-2",
-//            "norad_id": [],
-//            "reused": false,
-//            "customers": [
-//            "DARPA"
-//            ],
-//            "nationality": "United States",
-//            "manufacturer": "SSTL",
-//            "payload_type": "Satellite",
-//            "payload_mass_kg": 20,
-//            "payload_mass_lbs": 43,
-//            "orbit": "LEO",
-//            "orbit_params": {
-//            "reference_system": "geocentric",
-//            "regime": "low-earth",
-//            "longitude": null,
-//            "semi_major_axis_km": null,
-//            "eccentricity": null,
-//            "periapsis_km": 400,
-//            "apoapsis_km": 500,
-//            "inclination_deg": 39,
-//            "period_min": null,
-//            "lifespan_years": null,
-//            "epoch": null,
-//            "mean_motion": null,
-//            "raan": null,
-//            "arg_of_pericenter": null,
-//            "mean_anomaly": null
-//            }
-//            }
-//            ]
-//        },
-//        "fairings": {
-//            "reused": false,
-//            "recovery_attempt": false,
-//            "recovered": false,
-//            "ship": null
-//        }
-//}
+struct LaunchSite: Codable {
+    let siteID: SiteID
+    let siteName: SiteName
+    let siteNameLong: SiteNameLong
+    
+    enum CodingKeys: String, CodingKey {
+        case siteID = "site_id"
+        case siteName = "site_name"
+        case siteNameLong = "site_name_long"
+    }
+}
+
+enum SiteID: String, Codable {
+    case ccafsSlc40 = "ccafs_slc_40"
+    case kscLc39A = "ksc_lc_39a"
+    case kwajaleinAtoll = "kwajalein_atoll"
+    case vafbSlc4E = "vafb_slc_4e"
+}
+
+enum SiteName: String, Codable {
+    case ccafsSlc40 = "CCAFS SLC 40"
+    case kscLc39A = "KSC LC 39A"
+    case kwajaleinAtoll = "Kwajalein Atoll"
+    case vafbSlc4E = "VAFB SLC 4E"
+}
+
+enum SiteNameLong: String, Codable {
+    case capeCanaveralAirForceStationSpaceLaunchComplex40 = "Cape Canaveral Air Force Station Space Launch Complex 40"
+    case kennedySpaceCenterHistoricLaunchComplex39A = "Kennedy Space Center Historic Launch Complex 39A"
+    case kwajaleinAtollOmelekIsland = "Kwajalein Atoll Omelek Island"
+    case vandenbergAirForceBaseSpaceLaunchComplex4E = "Vandenberg Air Force Base Space Launch Complex 4E"
+}
+
+struct Links: Codable {
+    let missionPatch, missionPatchSmall: String?
+    let redditCampaign: String?
+    let redditLaunch: String?
+    let redditRecovery, redditMedia: String?
+    let presskit: String?
+    let articleLink: String?
+    let wikipedia, videoLink: String?
+    let youtubeID: String?
+    let flickrImages: [String]
+    
+    enum CodingKeys: String, CodingKey {
+        case missionPatch = "mission_patch"
+        case missionPatchSmall = "mission_patch_small"
+        case redditCampaign = "reddit_campaign"
+        case redditLaunch = "reddit_launch"
+        case redditRecovery = "reddit_recovery"
+        case redditMedia = "reddit_media"
+        case presskit
+        case articleLink = "article_link"
+        case wikipedia
+        case videoLink = "video_link"
+        case youtubeID = "youtube_id"
+        case flickrImages = "flickr_images"
+    }
+}
+
+struct Rocket: Codable {
+    let rocketID: RocketID
+    let rocketName: RocketName
+    let rocketType: RocketType
+    let firstStage: FirstStage
+    let secondStage: SecondStage
+    let fairings: Fairings?
+    
+    enum CodingKeys: String, CodingKey {
+        case rocketID = "rocket_id"
+        case rocketName = "rocket_name"
+        case rocketType = "rocket_type"
+        case firstStage = "first_stage"
+        case secondStage = "second_stage"
+        case fairings
+    }
+}
+
+struct Fairings: Codable {
+    let reused: Bool
+    let recoveryAttempt, recovered: Bool?
+    let ship: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case reused
+        case recoveryAttempt = "recovery_attempt"
+        case recovered, ship
+    }
+}
+
+struct FirstStage: Codable {
+    let cores: [Core]
+}
+
+struct Core: Codable {
+    let coreSerial: String?
+    let flight, block: Int?
+    let gridfins, legs, reused, landSuccess: Bool?
+    let landingIntent: Bool?
+    let landingType: LandingType?
+    let landingVehicle: LandingVehicle?
+    
+    enum CodingKeys: String, CodingKey {
+        case coreSerial = "core_serial"
+        case flight, block, gridfins, legs, reused
+        case landSuccess = "land_success"
+        case landingIntent = "landing_intent"
+        case landingType = "landing_type"
+        case landingVehicle = "landing_vehicle"
+    }
+}
+
+enum LandingType: String, Codable {
+    case asds = "ASDS"
+    case ocean = "Ocean"
+    case rtls = "RTLS"
+}
+
+enum LandingVehicle: String, Codable {
+    case jrti = "JRTI"
+    case jrti1 = "JRTI-1"
+    case lz1 = "LZ-1"
+    case lz2 = "LZ-2"
+    case lz4 = "LZ-4"
+    case ocisly = "OCISLY"
+}
+
+enum RocketID: String, Codable {
+    case falcon1 = "falcon1"
+    case falcon9 = "falcon9"
+    case falconheavy = "falconheavy"
+}
+
+enum RocketName: String, Codable {
+    case falcon1 = "Falcon 1"
+    case falcon9 = "Falcon 9"
+    case falconHeavy = "Falcon Heavy"
+}
+
+enum RocketType: String, Codable {
+    case ft = "FT"
+    case merlinA = "Merlin A"
+    case merlinC = "Merlin C"
+    case v10 = "v1.0"
+    case v11 = "v1.1"
+}
+
+struct SecondStage: Codable {
+    let block: Int?
+    let payloads: [Payload]
+}
+
+struct Payload: Codable {
+    let payloadID: String
+    let noradID: [Int]
+    let reused: Bool
+    let customers: [String]
+    let nationality: String?
+    let manufacturer: String?
+    let payloadType: PayloadType
+    let payloadMassKg, payloadMassLbs: Double?
+    let orbit: String
+    let orbitParams: OrbitParams
+    let capSerial: String?
+    let massReturnedKg, massReturnedLbs: Double?
+    let flightTimeSEC: Int?
+    let cargoManifest: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case payloadID = "payload_id"
+        case noradID = "norad_id"
+        case reused, customers, nationality, manufacturer
+        case payloadType = "payload_type"
+        case payloadMassKg = "payload_mass_kg"
+        case payloadMassLbs = "payload_mass_lbs"
+        case orbit
+        case orbitParams = "orbit_params"
+        case capSerial = "cap_serial"
+        case massReturnedKg = "mass_returned_kg"
+        case massReturnedLbs = "mass_returned_lbs"
+        case flightTimeSEC = "flight_time_sec"
+        case cargoManifest = "cargo_manifest"
+    }
+}
+
+struct OrbitParams: Codable {
+    let referenceSystem: ReferenceSystem?
+    let regime: Regime?
+    let longitude, semiMajorAxisKM, eccentricity, periapsisKM: Double?
+    let apoapsisKM, inclinationDeg, periodMin, lifespanYears: Double?
+    let epoch: String?
+    let meanMotion, raan: Double?
+    let argOfPericenter, meanAnomaly: Double?
+    
+    enum CodingKeys: String, CodingKey {
+        case referenceSystem = "reference_system"
+        case regime, longitude
+        case semiMajorAxisKM = "semi_major_axis_km"
+        case eccentricity
+        case periapsisKM = "periapsis_km"
+        case apoapsisKM = "apoapsis_km"
+        case inclinationDeg = "inclination_deg"
+        case periodMin = "period_min"
+        case lifespanYears = "lifespan_years"
+        case epoch
+        case meanMotion = "mean_motion"
+        case raan
+        case argOfPericenter = "arg_of_pericenter"
+        case meanAnomaly = "mean_anomaly"
+    }
+}
+
+enum ReferenceSystem: String, Codable {
+    case geocenteric = "geocenteric"
+    case geocentric = "geocentric"
+    case heliocentric = "heliocentric"
+    case highlyElliptical = "highly-elliptical"
+    case selenocentric = "selenocentric"
+}
+
+enum Regime: String, Codable {
+    case geostationary = "geostationary"
+    case geosynchronous = "geosynchronous"
+    case highEarth = "high-earth"
+    case highlyElliptical = "highly-elliptical"
+    case l1Point = "L1-point"
+    case lowEarth = "low-earth"
+    case semiSynchronous = "semi-synchronous"
+    case subOrbital = "sub-orbital"
+    case sunSynchronous = "sun-synchronous"
+}
+
+enum PayloadType: String, Codable {
+    case crewDragon = "Crew Dragon"
+    case dragon10 = "Dragon 1.0"
+    case dragon11 = "Dragon 1.1"
+    case dragonBoilerplate = "Dragon Boilerplate"
+    case lander = "Lander"
+    case satellite = "Satellite"
+}
+
+struct Telemetry: Codable {
+    let flightClub: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case flightClub = "flight_club"
+    }
+}
+
+enum TentativeMaxPrecision: String, Codable {
+    case day = "day"
+    case half = "half"
+    case hour = "hour"
+    case month = "month"
+    case quarter = "quarter"
+    case year = "year"
+}
