@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "HomeCell"
 
 protocol HomeViewManagerDelegate: class {
     func didRecieveDate(launches :[Launch])
@@ -17,13 +17,13 @@ protocol HomeViewManagerDelegate: class {
 
 class HomeViewCollectionViewController: UICollectionViewController {
     
+    // Mark: Properties 
+    let viewManager = HomeViewManager()
     var launches: [Launch] = [] {
         didSet {
              self.collectionView.reloadData()
         }
     }
-    
-    let viewManager = HomeViewManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +31,12 @@ class HomeViewCollectionViewController: UICollectionViewController {
         viewManager.delegate = self
         viewManager.fetchAllLaunches()
         
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        collectionView.backgroundColor = .lightGray
 
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        // Register cell
+        let homeViewCollectionViewCell = UINib(nibName: "HomeViewCollectionViewCell", bundle: nil)
+        collectionView?.register(homeViewCollectionViewCell, forCellWithReuseIdentifier: reuseIdentifier)
 
-        // Do any additional setup after loading the view.
     }
     
     init() {
@@ -49,44 +47,39 @@ class HomeViewCollectionViewController: UICollectionViewController {
         super.init(coder: aDecoder)
     }
     
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
-
+/// MARK: UICollectionViewDataSource
+extension  HomeViewCollectionViewController {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
-
+    
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return self.launches.count
     }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
-        // Configure the cell
-        cell.backgroundColor = .blue
-        print(self.launches[indexPath.row].missionName)
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HomeViewCollectionViewCell
+        cell.missionLabel.text = self.launches[indexPath.row].missionName
         return cell
     }
-
 }
+
+/// MARK: UICollectionViewDelegateFlowLayout
+extension HomeViewCollectionViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width, height: 200.0)
+    }
+}
+
 
 extension HomeViewCollectionViewController: HomeViewManagerDelegate {
     func didRecieveDate(launches: [Launch]) {
         self.launches = launches
     }
-    
-    
 }
