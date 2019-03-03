@@ -20,6 +20,9 @@ class HomeViewCollectionViewController: UICollectionViewController {
              self.collectionView.reloadData()
         }
     }
+    
+    // Var to hold the cell frame. We will need this when we animate the cell to a new view and when we go animate back
+    var cellFrame: CGRect?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +78,49 @@ extension  HomeViewCollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let redView = UIView()
+        redView.backgroundColor = .red
+        redView.layer.cornerRadius = 16.0
+        redView.addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector(handleRemoveView)))
+        view.addSubview(redView)
+        
+        // To Animate the cell into a full view. First, let's get the cell and it's frame
+        guard let cell = collectionView.cellForItem(at: indexPath), let cellFrame = cell.superview?.convert(cell.frame, to: nil) else { return }
+        
+        // Keep a hold of the cell frame
+        self.cellFrame = cellFrame
+        redView.frame = cellFrame
+        
+        
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
+            // get the height of the status bar + navigation bar
+            guard let navigationBar = self.navigationController?.navigationBar.frame.size.height else {
+                return
+            }
+            
+            self.navigationController?.navigationBar.transform = CGAffineTransform(translationX: 0, y: -(((navigationBar + UIApplication.shared.statusBarFrame.height))))
+            self.tabBarController?.tabBar.transform = CGAffineTransform(translationX: 0, y: self.tabBarController?.tabBar.frame.size.height ?? 100)
+            redView.frame = self.view.frame
+            }, completion: nil)
+        
+    }
+    
+    @objc func handleRemoveView(gesture :UITapGestureRecognizer) {
+            UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
+                
+                // Get back to normal location
+                self.navigationController?.navigationBar.transform = .identity; self.tabBarController?.tabBar.transform = .identity
+
+                guard let cellFrame = self.cellFrame else {
+                    print("Couldn't get the cell frame")
+                    return
+                }
+                gesture.view?.frame = cellFrame
+            }, completion: { _ in
+                gesture.view?.removeFromSuperview()
+            })
+
         
     }
 }
