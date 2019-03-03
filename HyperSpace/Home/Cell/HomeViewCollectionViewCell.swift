@@ -12,6 +12,7 @@ class HomeViewCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var mainView: UIView!
     
+    @IBOutlet var imageView: UIImageView!
     @IBOutlet var missionLabel: UILabel!
     
     
@@ -22,7 +23,7 @@ class HomeViewCollectionViewCell: UICollectionViewCell {
     }
     
     fileprivate func setupCell() {
-        mainView.layer.cornerRadius = 5.0
+        mainView.layer.cornerRadius = 16.0
         mainView.layer.shadowRadius = 5.0
         mainView.layer.shadowColor = UIColor.blue.cgColor
     }

@@ -4,5 +4,6 @@ use_frameworks!
 
 target 'HyperSpace' do
     pod 'Alamofire', '~> 5.0.0-beta.2'
+    pod 'SDWebImage', '~> 4.0'
     pod 'GoogleAnalytics'
     end

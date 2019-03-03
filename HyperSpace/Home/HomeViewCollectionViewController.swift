@@ -7,17 +7,13 @@
 //
 
 import UIKit
+import SDWebImage
 
 private let reuseIdentifier = "HomeCell"
 
-protocol HomeViewManagerDelegate: class {
-    func didRecieveDate(launches :[Launch])
-}
-
-
 class HomeViewCollectionViewController: UICollectionViewController {
     
-    // Mark: Properties 
+    // Mark: Properties
     let viewManager = HomeViewManager()
     var launches: [Launch] = [] {
         didSet {
@@ -31,7 +27,11 @@ class HomeViewCollectionViewController: UICollectionViewController {
         viewManager.delegate = self
         viewManager.fetchAllLaunches()
         
-        collectionView.backgroundColor = .lightGray
+        
+        // Hide Navigation Controller on swipe
+        navigationController?.hidesBarsOnSwipe = true
+        
+        collectionView.backgroundColor = #colorLiteral(red: 0.9338129163, green: 0.9282616973, blue: 0.9380800128, alpha: 1)
 
         // Register cell
         let homeViewCollectionViewCell = UINib(nibName: "HomeViewCollectionViewCell", bundle: nil)
@@ -65,17 +65,35 @@ extension  HomeViewCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HomeViewCollectionViewCell
-        cell.missionLabel.text = self.launches[indexPath.row].missionName
+        cell.missionLabel.text =  ("\(self.launches[indexPath.row].missionName) \(self.launches[indexPath.row].launchYear)")
+        
+        if let imageURL = self.launches[indexPath.row].links.missionPatch {
+
+              cell.imageView?.sd_setImage(with: URL(string: imageURL), completed: nil)
+        }
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
     }
 }
 
 /// MARK: UICollectionViewDelegateFlowLayout
 extension HomeViewCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width, height: 200.0)
+        return CGSize(width: collectionView.frame.size.width - 64, height: 450.0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 32.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 32.0, left: 0.0, bottom: 32.0, right: 0.0)
     }
 }
+
 
 
 extension HomeViewCollectionViewController: HomeViewManagerDelegate {
