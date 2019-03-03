@@ -79,18 +79,17 @@ extension  HomeViewCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let redView = UIView()
-        redView.backgroundColor = .red
-        redView.layer.cornerRadius = 16.0
-        redView.addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector(handleRemoveView)))
-        view.addSubview(redView)
+        let launchDetailsTableViewController = LaunchDetailsTableViewController()
+        launchDetailsTableViewController.view.layer.cornerRadius = 16.0
+        launchDetailsTableViewController.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector(handleRemoveView)))
+        view.addSubview(launchDetailsTableViewController.view)
         
         // To Animate the cell into a full view. First, let's get the cell and it's frame
         guard let cell = collectionView.cellForItem(at: indexPath), let cellFrame = cell.superview?.convert(cell.frame, to: nil) else { return }
         
         // Keep a hold of the cell frame
         self.cellFrame = cellFrame
-        redView.frame = cellFrame
+        launchDetailsTableViewController.view.frame = cellFrame
         
         
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
@@ -101,7 +100,7 @@ extension  HomeViewCollectionViewController {
             
             self.navigationController?.navigationBar.transform = CGAffineTransform(translationX: 0, y: -(((navigationBar + UIApplication.shared.statusBarFrame.height))))
             self.tabBarController?.tabBar.transform = CGAffineTransform(translationX: 0, y: self.tabBarController?.tabBar.frame.size.height ?? 100)
-            redView.frame = self.view.frame
+            launchDetailsTableViewController.view.frame = self.view.frame
             }, completion: nil)
         
     }

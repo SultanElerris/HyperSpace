@@ -14,6 +14,7 @@
 		E437CF582218A242009A5299 /* HyperSpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E437CF572218A242009A5299 /* HyperSpaceTests.swift */; };
 		E437CF632218A242009A5299 /* HyperSpaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E437CF622218A242009A5299 /* HyperSpaceUITests.swift */; };
 		E437CF74221B92B2009A5299 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E437CF73221B92B2009A5299 /* NetworkingManager.swift */; };
+		E4DC019B222C52150071444F /* LaunchDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DC019A222C52150071444F /* LaunchDetailsTableViewController.swift */; };
 		E4EFBD932220E18F00EE324E /* HomeViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EFBD922220E18F00EE324E /* HomeViewManager.swift */; };
 		E4EFBD952220E1BB00EE324E /* HomeViewCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EFBD942220E1BB00EE324E /* HomeViewCollectionViewController.swift */; };
 		E4EFBD972220E1F500EE324E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4EFBD962220E1F500EE324E /* Home.storyboard */; };
@@ -56,6 +57,7 @@
 		E437CF622218A242009A5299 /* HyperSpaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperSpaceUITests.swift; sourceTree = "<group>"; };
 		E437CF642218A242009A5299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E437CF73221B92B2009A5299 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		E4DC019A222C52150071444F /* LaunchDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsTableViewController.swift; sourceTree = "<group>"; };
 		E4EFBD922220E18F00EE324E /* HomeViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewManager.swift; sourceTree = "<group>"; };
 		E4EFBD942220E1BB00EE324E /* HomeViewCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCollectionViewController.swift; sourceTree = "<group>"; };
 		E4EFBD962220E1F500EE324E /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				E4EFBD9B222733F900EE324E /* TabBarController */,
+				E4DC0199222C51C10071444F /* Launch Deatils */,
 				E4EFBD912220E14500EE324E /* Home */,
 				E437CF72221B9291009A5299 /* Networking */,
 				E4EFBD982220E2D500EE324E /* Others */,
@@ -175,6 +178,14 @@
 				E4EFBD992220E86900EE324E /* Launch.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E4DC0199222C51C10071444F /* Launch Deatils */ = {
+			isa = PBXGroup;
+			children = (
+				E4DC019A222C52150071444F /* LaunchDetailsTableViewController.swift */,
+			);
+			path = "Launch Deatils";
 			sourceTree = "<group>";
 		};
 		E4EFBD912220E14500EE324E /* Home */ = {
@@ -399,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4EFBD952220E1BB00EE324E /* HomeViewCollectionViewController.swift in Sources */,
+				E4DC019B222C52150071444F /* LaunchDetailsTableViewController.swift in Sources */,
 				E437CF74221B92B2009A5299 /* NetworkingManager.swift in Sources */,
 				E4EFBD9D2227341500EE324E /* BaseTabBarController.swift in Sources */,
 				E4EFBD9A2220E86900EE324E /* Launch.swift in Sources */,
