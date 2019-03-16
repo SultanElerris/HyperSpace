@@ -84,6 +84,8 @@ extension  HomeViewCollectionViewController {
         launchDetailsTableViewController.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector(handleRemoveView)))
         view.addSubview(launchDetailsTableViewController.view)
         
+        addChild(launchDetailsTableViewController)
+        
         // To Animate the cell into a full view. First, let's get the cell and it's frame
         guard let cell = collectionView.cellForItem(at: indexPath), let cellFrame = cell.superview?.convert(cell.frame, to: nil) else { return }
         
