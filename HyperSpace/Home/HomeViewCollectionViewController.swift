@@ -68,7 +68,7 @@ extension  HomeViewCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HomeViewCollectionViewCell
-        cell.missionLabel.text =  ("\(self.launches[indexPath.row].missionName) \(self.launches[indexPath.row].launchYear)")
+        cell.missionLabel.text =  ("\(self.launches[indexPath.row].missionName)")
         
         if let imageURL = self.launches[indexPath.row].links.missionPatch {
 
@@ -79,32 +79,35 @@ extension  HomeViewCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let launchDetailsTableViewController = LaunchDetailsTableViewController()
-        launchDetailsTableViewController.view.layer.cornerRadius = 16.0
-        launchDetailsTableViewController.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector(handleRemoveView)))
-        view.addSubview(launchDetailsTableViewController.view)
+        let launchDetailsTableViewController = LaunchDetail sTableViewController()
+        launchDetailsTableViewController.flightNumber = self.launches[indexPath.row].flightNumber
         
-        addChild(launchDetailsTableViewController)
-        
-        // To Animate the cell into a full view. First, let's get the cell and it's frame
-        guard let cell = collectionView.cellForItem(at: indexPath), let cellFrame = cell.superview?.convert(cell.frame, to: nil) else { return }
-        
-        // Keep a hold of the cell frame
-        self.cellFrame = cellFrame
-        launchDetailsTableViewController.view.frame = cellFrame
-        
-        
-        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
-            // get the height of the status bar + navigation bar
-            guard let navigationBar = self.navigationController?.navigationBar.frame.size.height else {
-                return
-            }
-            
-            self.navigationController?.navigationBar.transform = CGAffineTransform(translationX: 0, y: -(((navigationBar + UIApplication.shared.statusBarFrame.height))))
-            self.tabBarController?.tabBar.transform = CGAffineTransform(translationX: 0, y: self.tabBarController?.tabBar.frame.size.height ?? 100)
-            launchDetailsTableViewController.view.frame = self.view.frame
-            }, completion: nil)
-        
+        navigationController?.present(launchDetailsTableViewController, animated: true, completion: nil)
+//        launchDetailsTableViewController.view.layer.cornerRadius = 16.0
+//        launchDetailsTableViewController.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector(handleRemoveView)))
+//        view.addSubview(launchDetailsTableViewController.view)
+//
+//        addChild(launchDetailsTableViewController)
+//
+//        // To Animate the cell into a full view. First, let's get the cell and it's frame
+//        guard let cell = collectionView.cellForItem(at: indexPath), let cellFrame = cell.superview?.convert(cell.frame, to: nil) else { return }
+//
+//        // Keep a hold of the cell frame
+//        self.cellFrame = cellFrame
+//        launchDetailsTableViewController.view.frame = cellFrame
+//
+//
+//        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
+//            // get the height of the status bar + navigation bar
+//            guard let navigationBar = self.navigationController?.navigationBar.frame.size.height else {
+//                return
+//            }
+//
+//            self.navigationController?.navigationBar.transform = CGAffineTransform(translationX: 0, y: -(((navigationBar + UIApplication.shared.statusBarFrame.height))))
+//            self.tabBarController?.tabBar.transform = CGAffineTransform(translationX: 0, y: self.tabBarController?.tabBar.frame.size.height ?? 100)
+//            launchDetailsTableViewController.view.frame = self.view.frame
+//            }, completion: nil)
+//
     }
     
     @objc func handleRemoveView(gesture :UITapGestureRecognizer) {
@@ -129,15 +132,15 @@ extension  HomeViewCollectionViewController {
 /// MARK: UICollectionViewDelegateFlowLayout
 extension HomeViewCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width - 64, height: 450.0)
+        return CGSize(width: collectionView.frame.size.width - 20, height: 129.0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 32.0
+        return 10.0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 32.0, left: 0.0, bottom: 32.0, right: 0.0)
+        return UIEdgeInsets(top: 5.0, left: 0.0, bottom: 5.0, right: 0.0)
     }
 }
 

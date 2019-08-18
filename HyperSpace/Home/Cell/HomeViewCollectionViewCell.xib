@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14835.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14790.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,56 +11,54 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCell" id="gTV-IL-0wX" customClass="HomeViewCollectionViewCell" customModule="HyperSpace" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="347" height="500"/>
+            <rect key="frame" x="0.0" y="0.0" width="347" height="129"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="347" height="500"/>
+                <rect key="frame" x="0.0" y="0.0" width="347" height="129"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwy-4l-njb">
-                        <rect key="frame" x="0.0" y="0.0" width="347" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="347" height="129"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="XWK-fT-ndc">
-                                <rect key="frame" x="43" y="35" width="261" height="287"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uw-Kq-EUK">
-                                        <rect key="frame" x="110" y="0.0" width="41.5" height="64"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EqQ-An-xZ0">
-                                        <rect key="frame" x="20.5" y="67" width="220" height="220"/>
-                                    </imageView>
-                                </subviews>
-                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EqQ-An-xZ0">
+                                <rect key="frame" x="8" y="8" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="QcE-Da-RaV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uw-Kq-EUK">
+                                <rect key="frame" x="126" y="8" width="213" height="24"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="XWK-fT-ndc" firstAttribute="leading" secondItem="fwy-4l-njb" secondAttribute="leading" constant="43" id="7JC-e1-cYB"/>
-                            <constraint firstAttribute="bottom" secondItem="XWK-fT-ndc" secondAttribute="bottom" constant="178" id="K34-q7-e63"/>
-                            <constraint firstItem="XWK-fT-ndc" firstAttribute="centerX" secondItem="fwy-4l-njb" secondAttribute="centerX" id="WuP-hg-jQ2"/>
-                            <constraint firstItem="XWK-fT-ndc" firstAttribute="top" secondItem="fwy-4l-njb" secondAttribute="top" constant="35" id="puC-Es-TD7"/>
+                            <constraint firstItem="EqQ-An-xZ0" firstAttribute="leading" secondItem="fwy-4l-njb" secondAttribute="leadingMargin" id="Ips-2A-GMV"/>
+                            <constraint firstAttribute="bottom" secondItem="EqQ-An-xZ0" secondAttribute="bottom" constant="11" id="K6l-Ve-G96"/>
+                            <constraint firstItem="EqQ-An-xZ0" firstAttribute="top" secondItem="1uw-Kq-EUK" secondAttribute="top" id="Mlt-nr-KA7"/>
+                            <constraint firstItem="1uw-Kq-EUK" firstAttribute="trailing" secondItem="fwy-4l-njb" secondAttribute="trailingMargin" id="VDI-IB-tA5"/>
+                            <constraint firstItem="1uw-Kq-EUK" firstAttribute="leading" secondItem="EqQ-An-xZ0" secondAttribute="trailing" constant="8" id="abI-qb-En6"/>
+                            <constraint firstItem="EqQ-An-xZ0" firstAttribute="top" secondItem="fwy-4l-njb" secondAttribute="topMargin" id="biD-sw-xQP"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="fwy-4l-njb" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="4r5-Xw-KcD"/>
-                <constraint firstItem="fwy-4l-njb" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="7AF-23-P7a"/>
-                <constraint firstAttribute="bottom" secondItem="fwy-4l-njb" secondAttribute="bottom" id="ZIL-RO-7bR"/>
-                <constraint firstAttribute="trailing" secondItem="fwy-4l-njb" secondAttribute="trailing" id="daV-7e-HWa"/>
-                <constraint firstItem="fwy-4l-njb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="smD-LE-Ga4"/>
-                <constraint firstItem="fwy-4l-njb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="u8T-KS-EAU"/>
+                <constraint firstItem="fwy-4l-njb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Cek-rb-uUc"/>
+                <constraint firstItem="fwy-4l-njb" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="FDm-oL-lgv"/>
+                <constraint firstItem="fwy-4l-njb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="I3u-en-y6d"/>
+                <constraint firstItem="fwy-4l-njb" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="PmY-Bg-p3g"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="347" height="418"/>
+            <size key="customSize" width="347" height="47"/>
             <connections>
                 <outlet property="imageView" destination="EqQ-An-xZ0" id="kRR-IL-XQk"/>
                 <outlet property="mainView" destination="fwy-4l-njb" id="4XC-ih-MZc"/>
                 <outlet property="missionLabel" destination="1uw-Kq-EUK" id="o2u-31-MGl"/>
             </connections>
-            <point key="canvasLocation" x="-183.19999999999999" y="29.685157421289357"/>
+            <point key="canvasLocation" x="-176.80000000000001" y="-137.18140929535232"/>
         </collectionViewCell>
     </objects>
 </document>

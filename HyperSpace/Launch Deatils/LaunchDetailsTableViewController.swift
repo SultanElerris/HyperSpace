@@ -10,8 +10,14 @@ import UIKit
 
 class LaunchDetailsTableViewController: UITableViewController {
 
+    
+    var flightNumber = Int()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(flightNumber)
+        
 
     }
     
