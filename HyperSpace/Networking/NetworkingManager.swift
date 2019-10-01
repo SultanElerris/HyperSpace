@@ -53,6 +53,25 @@ class NetworkManager {
             }
         }
     }
+    
+    func fetchDictFrom(url: String?, cache: Bool, completion: @escaping (Any) -> Void)  {
+        
+        // No URL, no point of proceeding so early exit
+        guard let url = url else{
+            return
+        }
+        // Request data from Almo
+        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { response  in
+            
+            switch response.result {
+            case .success(let payload):
+                guard let jsonArray = payload as? [String: Any] else { return }
+                completion(jsonArray)
+            case .failure(let error):
+                print("Request failed with error: \(error)")
+            }
+        }
+    }
 }
 
 

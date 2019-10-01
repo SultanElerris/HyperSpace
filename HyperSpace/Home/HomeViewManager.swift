@@ -15,7 +15,7 @@ protocol HomeViewManagerDelegate: class {
 
 class HomeViewManager {
     
-    let networkManager = NetworkManager.sharedInstance
+    private let networkManager = NetworkManager.sharedInstance
     weak var delegate: HomeViewManagerDelegate?
     
     
