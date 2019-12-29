@@ -1,9 +1,9 @@
 PODS:
-  - Alamofire (5.0.0-beta.2)
+  - Alamofire (5.0.0-rc.3)
   - GoogleAnalytics (3.17.0)
-  - SDWebImage (4.4.6):
-    - SDWebImage/Core (= 4.4.6)
-  - SDWebImage/Core (4.4.6)
+  - SDWebImage (4.4.8):
+    - SDWebImage/Core (= 4.4.8)
+  - SDWebImage/Core (4.4.8)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-beta.2)
@@ -17,9 +17,9 @@ SPEC REPOS:
     - SDWebImage
 
 SPEC CHECKSUMS:
-  Alamofire: d1e5493588babe3e7b56ae29e8032942f4de09fe
+  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
   GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
-  SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
+  SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
 
 PODFILE CHECKSUM: 7e0102b240996a11f609d64051ffbc6c3d597ad4
 

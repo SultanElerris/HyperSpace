@@ -12,10 +12,22 @@ import SDWebImage
 private let reuseIdentifier = "HomeCell"
  let networkManager = NetworkManager.sharedInstance
 
+protocol CellSelectionDelegateProtocol: class {
+    func cellSelected(with launch: Launch?)
+}
+
 class HomeViewCollectionViewController: UICollectionViewController {
+    
+    // Cell Selection Delegate
+    weak var delegate: CellSelectionDelegateProtocol?
+    
+    var activityIndecatorView: UIActivityIndicatorView?
     
     // Mark: Properties
     let viewManager = HomeViewManager()
+    // Search Controller
+    fileprivate let searchController = UISearchController(searchResultsController: nil)
+    
     var launches: [Launch] = [] {
         didSet {
              self.collectionView.reloadData()
@@ -31,17 +43,34 @@ class HomeViewCollectionViewController: UICollectionViewController {
         viewManager.delegate = self
         viewManager.fetchAllLaunches()
         
+        activityIndecatorView = UIActivityIndicatorView(style: .gray)
+        self.collectionView.backgroundView = activityIndecatorView
+        activityIndecatorView?.hidesWhenStopped = true
+        activityIndecatorView?.startAnimating()
+        
         
         // Hide Navigation Controller on swipe
         navigationController?.hidesBarsOnSwipe = true
         
         collectionView.backgroundColor = #colorLiteral(red: 0.9338129163, green: 0.9282616973, blue: 0.9380800128, alpha: 1)
+        
+        // Setup the search bar
+        setupSearchBar()
 
         // Register cell
         let homeViewCollectionViewCell = UINib(nibName: "HomeViewCollectionViewCell", bundle: nil)
         collectionView?.register(homeViewCollectionViewCell, forCellWithReuseIdentifier: reuseIdentifier)
 
     }
+    
+    fileprivate func setupSearchBar() {
+          definesPresentationContext = true
+          navigationItem.searchController = searchController
+          searchController.obscuresBackgroundDuringPresentation = false
+          navigationItem.hidesSearchBarWhenScrolling = false
+          searchController.searchBar.delegate = self
+          //searchController.searchResultsUpdater = self
+      }
     
     init() {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -87,10 +116,9 @@ extension  HomeViewCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HomeViewCollectionViewCell
-        cell.missionLabel.text =  ("\(self.launches[indexPath.row].missionName)")
         
-        if let imageURL = self.launches[indexPath.row].links.missionPatch {
-
+        if let imageURL = self.launches[indexPath.row].links?.missionPatch, let missionLabel = self.launches[indexPath.row].missionName, let launchYear = self.launches[indexPath.row].launchYear {
+              cell.missionLabel.text = missionLabel + " " + launchYear            
               cell.imageView?.sd_setImage(with: URL(string: imageURL), completed: nil)
         }
         return cell
@@ -99,27 +127,9 @@ extension  HomeViewCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let launchDetailsTableViewController = LaunchDetailsTableViewController()
-        launchDetailsTableViewController.flightNumber = self.launches[indexPath.row].flightNumber
-        
+        //launchDetailsTableViewController.launch = self.launches[indexPath.row]
+        delegate?.cellSelected(with: self.launches[indexPath.row])
         navigationController?.present(launchDetailsTableViewController, animated: true, completion: nil)
-    }
-    
-    @objc func handleRemoveView(gesture :UITapGestureRecognizer) {
-            UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
-                
-                // Get back to normal location
-                self.navigationController?.navigationBar.transform = .identity; self.tabBarController?.tabBar.transform = .identity
-
-                guard let cellFrame = self.cellFrame else {
-                    print("Couldn't get the cell frame")
-                    return
-                }
-                gesture.view?.frame = cellFrame
-            }, completion: { _ in
-                gesture.view?.removeFromSuperview()
-            })
-
-        
     }
 }
 
@@ -139,9 +149,27 @@ extension HomeViewCollectionViewController: UICollectionViewDelegateFlowLayout {
 }
 
 
-
-extension HomeViewCollectionViewController: HomeViewManagerDelegate {
+extension HomeViewCollectionViewController: HomeViewManagerDelegateProtocol {
     func didRecieveDate(launches: [Launch]) {
+        activityIndecatorView?.stopAnimating()
         self.launches = launches
     }
 }
+
+// Mark:- SearchBar Delegate Methods
+extension HomeViewCollectionViewController: UISearchBarDelegate{
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.searchController.searchBar.showsCancelButton = true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+    }
+}
+

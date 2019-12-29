@@ -10,40 +10,39 @@ import UIKit
 
 class LaunchDetailsTableViewController: UITableViewController {
 
-    
-    var flightNumber = Int()
+    var launch: Launch? {
+        didSet {
+            DispatchQueue.main.async { // Reload table view when the data is fetched.
+                self.refershUI()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(flightNumber)
-        
-        
-        let url = "https://api.spacexdata.com/v3/launches/\(flightNumber)"
-        
-        networkManager.fetchDictFrom(url: url, cache: true, completion: { (response) in
-            // Serialize our response to a json format so we can decode it later
-            guard  let jsonData = try? JSONSerialization.data(withJSONObject:response) else { return}
-            
-            do {
-                let jsonDecoder = JSONDecoder()
-                let lunch = try jsonDecoder.decode(Launch.self, from: jsonData)
-                
-                print(lunch)
-            } catch { /* Report the decoding error */ print("can't decode lunches json data",error) }
-        })
-
     }
     
-    
-    
+    func refershUI() {
+        tableView.reloadData()
+        
+    }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return  HomeViewCollectionViewCell()
+        let homeCell = HomeViewCollectionViewCell()
+        print(launch?.missionName ?? "")
+        //homeCell.missionLabel.text = launch?.missionName
+        return  homeCell
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 450
     }
 
+}
+
+extension LaunchDetailsTableViewController: CellSelectionDelegateProtocol {
+    func cellSelected(with launch: Launch?) {
+        self.launch = launch
+    }
 }
